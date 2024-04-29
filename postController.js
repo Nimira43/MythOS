@@ -46,4 +46,8 @@ const posts = [
 
 const getPosts = () => posts
 
-export { getPosts }
+// export { getPosts }
+
+export const getPostsLength = () => posts.length 
+
+export default getPosts 
