@@ -1,7 +1,7 @@
 {
   "name": "11-node-js-crash-course",
   "version": "1.0.0",
-  "description": "Node JS crash course",
+  "description": "Node JS Crash Course",
   "main": "index.js",
   "type": "module",
   "scripts": {
