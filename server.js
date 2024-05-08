@@ -5,9 +5,9 @@ const server = http.createServer((req, res) => {
     // res.setHeader('Content-Type', 'text/html')
     // res.write('Hi there')
 
-    res.writeHead(500, { 'Content-Type' : 'application/json' })
+    res.writeHead(200, { 'Content-Type' : 'text/html' })
 
-    res.end(JSON.stringify({ message: 'Server Error!!!' }))
+    res.end('<h1>Hello There!!!')
 })
 
 server.listen(PORT, () => {
