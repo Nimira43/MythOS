@@ -1,9 +1,11 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const { randomBytes } = require('crypto')
 
 const app = express()
-const PORT = 4000
+app.use(bodyParser.json())
 
+const PORT = 4000
 const posts = {}
 
 app.get('/posts', (req, res) => {
