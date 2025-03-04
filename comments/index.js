@@ -5,22 +5,22 @@ const { randomBytes } = require('crypto')
 const app = express()
 app.use(bodyParser.json())
 
-const PORT = 4000
-const posts = {}
+const PORT = 4001
+const commentsByPostId = {}
 
-app.get('/posts', (req, res) => {
-  res.send(posts)
+app.get('/posts/:id/comments', (req, res) => {
+  // res.send(posts)
 })
 
-app.post('/posts', (req, res) => {
-  const id = randomBytes(4).toString('hex')
-  const { title } = req.body
-  posts[id] = {
-    id, title
-  }
-  res.status(201).send(posts[id])
+app.post('/posts/:id/comments', (req, res) => {
+  const commentId = randomBytes(4).toString('hex')
+  const { content } = req.body
+  const comments = commentsByPostId[req.params.id] || []
+  comments.push({ id: commentId, content })
+  commentsByPostId[req.params.id] = comments
+  res.status(201).send(comments)
 })
 
-app.listen(4000, () => {
-  console.log(`POSTS SERVICE is listening on Port ${PORT}`)
+app.listen(PORT, () => {
+  console.log(`COMMENTS SERVICE is listening on Port ${PORT}`)
 })

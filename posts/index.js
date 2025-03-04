@@ -21,6 +21,6 @@ app.post('/posts', (req, res) => {
   res.status(201).send(posts[id])
 })
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
   console.log(`POSTS SERVICE is listening on Port ${PORT}`)
 })
