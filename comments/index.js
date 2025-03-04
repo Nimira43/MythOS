@@ -9,7 +9,7 @@ const PORT = 4001
 const commentsByPostId = {}
 
 app.get('/posts/:id/comments', (req, res) => {
-  // res.send(posts)
+  res.send(commentsByPostId[req.params.id] || [])
 })
 
 app.post('/posts/:id/comments', (req, res) => {
