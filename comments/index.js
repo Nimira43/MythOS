@@ -5,23 +5,23 @@ const { randomBytes } = require('crypto')
 const app = express()
 app.use(bodyParser.json())
 
-const posts = {}
+// const posts = {}
 
-app.get('/posts', (req, res) => {
-  res.send(posts)
+app.get('/posts/:id/comments', (req, res) => {
+  // res.send(posts)
 })
 
-app.post('/posts', (req, res) => {
-  const id = randomBytes(4).toString('hex')
-  const  { title } = req.body
+app.post('/posts/:id/comments', (req, res) => {
+  // const id = randomBytes(4).toString('hex')
+  // const  { title } = req.body
 
-  posts[id] = {
-    id, title
-  }
+  // posts[id] = {
+    // id, title
+  // }
 
-  res.send(201).send(posts[id])
+  // res.send(201).send(posts[id])
 })
 
-app.listen(4000, () => {
-  console.log('Listening on 4000')
+app.listen(4001, () => {
+  console.log('Comments Server - Listening on 4001')
 })
