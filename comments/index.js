@@ -5,7 +5,7 @@ const { randomBytes } = require('crypto')
 const app = express()
 app.use(bodyParser.json())
 
-// const posts = {}
+const commentsByPostId = {}
 
 app.get('/posts/:id/comments', (req, res) => {
   // res.send(posts)
