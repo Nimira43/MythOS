@@ -13,7 +13,7 @@ app.get('/posts/:id/comments', (req, res) => {
 
 app.post('/posts/:id/comments', (req, res) => {
   const commentId = randomBytes(4).toString('hex')
-  // const  { title } = req.body
+  const  { content } = req.body
 
   // posts[id] = {
     // id, title
