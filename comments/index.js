@@ -17,8 +17,9 @@ app.post('/posts/:id/comments', (req, res) => {
 
   const comments = commentsByPostId[req.params.id] || []
   comments.push({ id: commentId, content})
+  commentsByPostId[req.params.id] = comments
 
-  // res.send(201).send(posts[id])
+  res.status(201).send(comments)
 })
 
 app.listen(4001, () => {
