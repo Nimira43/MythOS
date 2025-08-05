@@ -10,7 +10,8 @@ export default function PostCreate() {
         <div className='form-group'>
           <label>Title of Post</label>
           <input 
-            type="text" 
+            value={title}
+            onChange={e => setTitle(e.target.value)} 
             className='form-control'
           />
         </div>
