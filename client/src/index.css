@@ -76,7 +76,7 @@ body {
   color: var(--grey-light);
 }
 .bg-grey-light-extra {
-  background-color: var(--grey-extra);
+  background-color: var(--grey-light-extra);
 }
 .text-grey-light-extra {
   color: var(--grey-light-extra);

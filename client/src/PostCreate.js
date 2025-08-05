@@ -3,7 +3,7 @@ export default function PostCreate() {
     <div>
       <form>
         <div className='form-group'>
-          <label>Post Title</label>
+          <label>Title of Post</label>
           <input 
             type="text" 
             className='form-control'
