@@ -4,9 +4,15 @@ import axios from 'axios'
 export default function PostCreate() {
   const [title, setTitle] = useState('')
   
+  const onSubmit = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <div>
-      <form>
+      <form
+        onSubmit={onSubmit}
+      >
         <div className='form-group'>
           <label>Title of Post</label>
           <input 
