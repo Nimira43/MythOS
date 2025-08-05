@@ -9,7 +9,7 @@ export default function PostCreate() {
             className='form-control'
           />
         </div>
-        <button className='btn btn-primary'>Submit</button>
+        <button className='btn bg-main text-light'>Submit</button>
       </form>
     </div>
   )

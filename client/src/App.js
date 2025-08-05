@@ -2,8 +2,8 @@ import PostCreate from './PostCreate'
 
 export default function App() {
   return (
-    <div>
-      <h1>MythOS Client</h1>
+    <div >
+      <h4 className='logo text-main'>MythOS</h4>
       <PostCreate />
     </div>
   )
