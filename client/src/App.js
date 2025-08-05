@@ -1,5 +1,10 @@
+import PostCreate from './PostCreate'
+
 export default function App() {
   return (
-    <div>MythOS Client</div>
+    <div>
+      <h1>MythOS Client</h1>
+      <PostCreate />
+    </div>
   )
 }
