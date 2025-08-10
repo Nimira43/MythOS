@@ -15,23 +15,15 @@ export default function CommentList({ postId}) {
 
   const renderedComments = comments.map(comment => {
     return (
-      <li>{comment.content}</li>
+      <li
+        key={comment.id}      
+      >
+        {comment.content}
+      </li>
     )
   })
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <div className='form-group'>
-          <label>New Comment</label>
-          <input 
-            className='form-control' 
-            value={content}
-            onChange={e => setContent(e.target.value)}
-          />
-        </div>
-        <button className='btn bg-main text-light'>Submit</button>
-      </form>
-    </div>
+    <ul>{renderedComments}</ul>
   )
 }
