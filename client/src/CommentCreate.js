@@ -7,7 +7,7 @@ export default function CommentCreate(
 
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <div className='form-group'>
           <label>New Comment</label>
           <input 
