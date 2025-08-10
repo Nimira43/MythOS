@@ -13,6 +13,25 @@ export default function PostList() {
     fetchPosts()
   }, [])
 
+  const renderedPosts = Object.values(posts).map(post => {
+    return (
+      <div 
+        className='card'
+        style={{
+          width: '30%',
+          marginBottom: '20px'
+        }} 
+        key={post.id}       
+      > 
+        <div 
+          className='card-body'
+        >
+          <p>{post.title}</p>
+        </div>
+      </div>
+    )
+  })
+
   return (
     <div>
 
