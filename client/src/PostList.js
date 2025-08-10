@@ -9,6 +9,10 @@ export default function PostList() {
     setPosts(res.data)
   }
 
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
   return (
     <div>
 
