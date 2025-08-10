@@ -25,7 +25,7 @@ export default function CommentCreate(
             onChange={e => setContent(e.target.value)}
           />
         </div>
-        <button className='btn bg-main'>Submit</button>
+        <button className='btn bg-main text-light'>Submit</button>
       </form>
     </div>
   )
