@@ -13,6 +13,12 @@ export default function CommentList({ postId}) {
     fetchData()
   })
 
+  const renderedComments = comments.map(comment => {
+    return (
+      <li>{comment.content}</li>
+    )
+  })
+
   return (
     <div>
       <form onSubmit={onSubmit}>
