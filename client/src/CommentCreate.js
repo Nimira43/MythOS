@@ -10,7 +10,11 @@ export default function CommentCreate(
       <form>
         <div className='form-group'>
           <label>New Comment</label>
-          <input className='form-control' />
+          <input 
+            className='form-control' 
+            value={content}
+            onChange={e => setContent(e.target.value)}
+          />
         </div>
         <button className='btn bg-main'>Submit</button>
       </form>
