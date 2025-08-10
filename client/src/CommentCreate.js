@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export default function CommentCreate(
   { postId }
 ) {
+  const [content, setContent] = useState('')
+
   return (
     <div>
       <form>
