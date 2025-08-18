@@ -21,7 +21,12 @@ app.post('/posts', (req, res) => {
   posts[id] = {
     id, title
   }
-  axios.post('http://localhost:4005/events')
+  axios.post('http://localhost:4005/events', {
+    type: 'PostCreated',
+    data: {
+      id, title
+    }
+  })
   res.send(201).send(posts[id])
 })
 
