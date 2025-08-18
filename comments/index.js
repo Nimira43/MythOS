@@ -27,7 +27,9 @@ app.post('/posts/:id/comments', (req, res) => {
   axios.post('http//localhost:4005/events', {
     type: 'CommentCreated',
     data: {
-      
+      id: commentId,
+      content,
+      post: req.params.id
     }
   }) 
 
