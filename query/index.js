@@ -8,7 +8,6 @@ app.use(cors())
 
 const posts = {}
 
-
 app.get('/posts', (req, res) => {
   res.send(posts)
 })
@@ -28,6 +27,8 @@ app.post('/events', (req, res) => {
     const post = posts[postId]
     post.comments.push({ id, content})
   }
+
+  console.log(posts)
 
   res.send({})
 })
