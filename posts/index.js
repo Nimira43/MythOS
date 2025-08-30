@@ -31,6 +31,10 @@ app.post('/posts', async (req, res) => {
   res.status(201).send(posts[id])
 })
 
+app.post('/events', (req, res) => {
+  
+}) 
+
 app.listen(4000, () => {
   console.log('Posts Server - Listening on 4000')
 })
