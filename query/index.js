@@ -14,3 +14,6 @@ app.post('/events', (req, res) => {
 
 })
 
+app.listen(4002, () => {
+  console.log('Query Server - Listening on Port 4002')
+})
