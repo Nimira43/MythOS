@@ -1,3 +1,43 @@
+// const express = require('express')
+// const bodyParser = require('body-parser')
+// const cors = require('cors')
+
+// const app = express()
+// app.use(bodyParser.json())
+// app.use(cors())
+
+// const posts = {}
+
+// app.get('/posts', (req, res) => {
+//   res.send(posts)
+// })
+
+// app.post('/events', (req, res) => {
+//   const { type, data } = req.body
+
+//   if (type === 'PostCreated') {
+//     const { id, title } = data
+
+//     posts[id] = { id, title, comments: []}
+//   }
+   
+//   if (type === 'CommentCreated') {
+//     const { id, content, postId } = data
+
+//     const post = posts[postId]
+//     post.comments.push({ id, content})
+//   }
+
+//   console.log(posts)
+
+//   res.send({})
+// })
+
+// app.listen(4002, () => {
+//   console.log('Query Server - Listening on Port 4002')
+// })
+
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -17,19 +57,22 @@ app.post('/events', (req, res) => {
 
   if (type === 'PostCreated') {
     const { id, title } = data
-
-    posts[id] = { id, title, comments: []}
+    posts[id] = { id, title, comments: [] }
   }
-   
+
   if (type === 'CommentCreated') {
     const { id, content, postId } = data
-
     const post = posts[postId]
-    post.comments.push({ id, content})
+
+    if (!post) {
+      console.warn(`Post with ID ${postId} not found. Skipping comment.`)
+      return res.status(400).send({ error: 'Post not found' })
+    }
+
+    post.comments.push({ id, content })
   }
 
-  console.log(posts)
-
+  console.log('Current posts state:', posts)
   res.send({})
 })
 
