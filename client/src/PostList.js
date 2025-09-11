@@ -29,7 +29,7 @@ export default function PostList() {
           className='card-body'
         >
           <h3 className='text-main'>{post.title}</h3>
-          <CommentList postId={post.id} />
+          <CommentList comments={post.comments} />
           <CommentCreate postId={post.id} />
           
         </div>
