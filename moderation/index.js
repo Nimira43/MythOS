@@ -5,7 +5,7 @@ const axios = require('axios')
 const app = express()
 app.use(bodyParser.json())
 
-app.post('/events', (re, res) => {
+app.post('/events', async (req, res) => {
   const { type, data } = req.body
 
   if (type === 'CommentCreated') {
@@ -23,6 +23,7 @@ app.post('/events', (re, res) => {
       }
     })
   }
+  res.send({})
 })
 
 app.listen(4003, () => {
