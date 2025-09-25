@@ -6,5 +6,9 @@ const app = express()
 app.use(bodyParser.json())
 
 app.post('/events', (re, res) => {
-  
+
+})
+
+app.listen(4003, () => {
+  console.log('Listening on Port 4003')
 })
