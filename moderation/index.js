@@ -10,5 +10,5 @@ app.post('/events', (re, res) => {
 })
 
 app.listen(4003, () => {
-  console.log('Listening on Port 4003')
+  console.log('Moderation Server - listening on Port 4003')
 })
