@@ -50,7 +50,9 @@ app.post('/events', (req, res) => {
     const { postId, id, status } = data
     const comments = commentsByPostId[postId]
 
-    const comment = comment.find(comment => {})
+    const comment = comment.find(comment => {
+      return comment.id === id
+    })
   }
 
   res.send({})
