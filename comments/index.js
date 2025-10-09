@@ -41,7 +41,7 @@ app.post('/posts/:id/comments', async (req, res) => {
   res.status(201).send(comments)
 })
 
-app.post('/events', (req, res) => {
+app.post('/events', async (req, res) => {
   console.log('COMMENTS --- Received Event:', req.body.type)
 
   const { type, data } = req.body
@@ -50,7 +50,7 @@ app.post('/events', (req, res) => {
     const { postId, id, status, content } = data
     const comments = commentsByPostId[postId]
 
-    const comment = comment.find(comment => {
+    const comment = comments.find(comment => {
       return comment.id === id
     })
 
@@ -60,7 +60,9 @@ app.post('/events', (req, res) => {
       type: 'CommentUpdated',
       data: {
         id,
-
+        status,
+        postId,
+        content
       }
     })
   }
