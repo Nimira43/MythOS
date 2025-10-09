@@ -46,6 +46,10 @@ app.post('/events', (req, res) => {
 
   const { type, data } = req.body
 
+  if (type === 'CommentModerated') {
+    const { postId, id, status } = data
+  }
+
   res.send({})
 }) 
 
