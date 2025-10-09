@@ -48,6 +48,9 @@ app.post('/events', (req, res) => {
 
   if (type === 'CommentModerated') {
     const { postId, id, status } = data
+    const comments = commentsByPostId[postId]
+
+    const comment = comment.find(comment => {})
   }
 
   res.send({})
