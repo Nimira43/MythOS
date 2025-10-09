@@ -53,6 +53,8 @@ app.post('/events', (req, res) => {
     const comment = comment.find(comment => {
       return comment.id === id
     })
+
+    comment.status = status
   }
 
   res.send({})
