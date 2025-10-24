@@ -32,6 +32,11 @@ app.post('/events', (req, res) => {
     post.comments.push({ id, content, status })
   }
 
+  if (type === 'CommentUpdated') {
+    const { id, content, postId, status } = data
+    
+  }
+
   console.log('Current posts state:', posts)
   res.send({})
 })
