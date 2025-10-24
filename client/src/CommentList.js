@@ -16,10 +16,8 @@ export default function CommentList({ comments }) {
     }
 
     return (
-      <li
-        key={comment.id}      
-      >
-        {comment.content}
+      <li key={comment.id}>
+        {content}
       </li>
     )
   })
