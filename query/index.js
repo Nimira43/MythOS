@@ -40,7 +40,7 @@ app.post('/events', (req, res) => {
     })
 
     comment.status = status
-
+    comment.content = content
   }
 
   console.log('Current posts state:', posts)
