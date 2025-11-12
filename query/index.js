@@ -47,6 +47,12 @@ app.post('/events', (req, res) => {
   res.send({})
 })
 
-app.listen(4002, () => {
+app.listen(4002, async () => {
   console.log('Query Server - Listening on Port 4002')
+
+  try {
+    
+  } catch (error) {
+    
+  }
 })
