@@ -51,7 +51,7 @@ app.listen(4002, async () => {
   console.log('Query Server - Listening on Port 4002')
 
   try {
-    
+    const res = await axios.get('http://localhost:4005/events')
   } catch (error) {
     
   }
