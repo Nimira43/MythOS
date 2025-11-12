@@ -45,9 +45,7 @@ app.get('/posts', (req, res) => {
 app.post('/events', (req, res) => {
   const { type, data } = req.body
 
-  
-
-  console.log('Current posts state:', posts)
+  handleEvent(type, data)
   res.send({})
 })
 
