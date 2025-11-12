@@ -8,7 +8,7 @@ app.use(cors())
 
 const posts = {}
 
-const handleEvent = () => {
+const handleEvent = (type, data) => {
   if (type === 'PostCreated') {
     const { id, title } = data
     posts[id] = { id, title, comments: [] }
